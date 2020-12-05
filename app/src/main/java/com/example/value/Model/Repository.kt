@@ -60,4 +60,5 @@ class Repository(private val mValueDAO: ValueDAO) {
     fun getOneByValor(valor: String): LiveData<ValueItem> {
         return mValueDAO.getValueByID(valor)
     }
+
 }

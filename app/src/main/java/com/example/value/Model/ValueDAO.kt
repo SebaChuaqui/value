@@ -1,10 +1,6 @@
 package com.example.value.Model
-
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface ValueDAO {
@@ -23,4 +19,7 @@ interface ValueDAO {
 
     @Query("SELECT * FROM value_table WHERE valor=:mvalor" )
     fun getValueByID(mvalor: String): LiveData<ValueItem>
+
+    @Update
+    fun getUpdate(mValueList: List<ValueItem>)
 }
